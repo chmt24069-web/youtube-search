@@ -19,14 +19,21 @@ export default function App() {
 
   return (
     <div>
-      <h1>YouTube 動画検索</h1>
+      <h1 className="title">YouTube動画検索</h1>
+      <div className="search-container">
+        <img src="/youtube.jpg" alt="Youtube" className="yt-icon"/>
 
-      <input
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="検索ワードを入力"
-      />
-      <button onClick={handleSearch}>検索</button>
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="検索ワードを入力"
+          className="search-input"
+        />
+
+        <button onClick={handleSearch} className="search-button">
+          検索
+        </button>
+      </div>
 
       <div>
         {videos.map((v) => (
